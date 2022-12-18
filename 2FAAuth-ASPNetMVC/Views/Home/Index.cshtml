@@ -4,11 +4,16 @@
 
 <div class="jumbotron">
 
+    @if (@HttpContext.Current.Session["UserName"] != null && @HttpContext.Current.Session["IsValidTwoFactorAuthentication"] != null)
+    {
+        <center>
+            <h2>
+                Welcome <span style="text-decoration: underline"> @HttpContext.Current.Session["UserName"].ToString()</span>
+            </h2>
+        </center>
+    }
 
-    <center>  <h2> Welcome <span style="text-decoration: underline"> @HttpContext.Current.Session["UserName"].ToString()</span>
-        </h2></center>
-
-</div>
+    </div>
 
 <div class="row">
     <div class="col-md-4">
